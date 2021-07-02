@@ -1,5 +1,5 @@
-﻿$drivers = pnputil -e | Select-String "Published name"
-foreach($driver in $drivers){
-    $driver = $driver.toString().replace("Published name :", "").trim()
-    pnputil -d $driver
+$Drivers = pnputil -e | Select-String "Published name"
+ForEach($Driver in $Drivers){
+    $Driver = $Driver.ToString().Replace("Published name :", "").Trim()
+    pnputil -d $Driver
 }
